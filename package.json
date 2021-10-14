@@ -26,6 +26,7 @@
     "@nestjs/mapped-types": "^0.1.1",
     "@nestjs/platform-express": "^7.5.1",
     "@nestjs/typeorm": "^7.1.5",
+    "body-parser": "^1.19.0",
     "mysql": "^2.18.1",
     "next": "^11.1.2",
     "reflect-metadata": "^0.1.13",

@@ -5,5 +5,6 @@ export declare class Customer {
     lastName: string;
     address: string;
     contactNumber: string;
+    photo: string;
     sales: Sale[];
 }

@@ -35,6 +35,10 @@ __decorate([
     __metadata("design:type", String)
 ], Customer.prototype, "contactNumber", void 0);
 __decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Customer.prototype, "photo", void 0);
+__decorate([
     typeorm_1.OneToMany(() => sale_entity_1.Sale, (sale) => sale.customer),
     __metadata("design:type", Array)
 ], Customer.prototype, "sales", void 0);

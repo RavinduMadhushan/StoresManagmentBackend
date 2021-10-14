@@ -24,6 +24,9 @@ export class Customer {
   @Column()
   contactNumber: string;
 
+  @Column()
+  photo: string;
+
   @OneToMany(() => Sale, (sale) => sale.customer)
   sales: Sale[];
 }
