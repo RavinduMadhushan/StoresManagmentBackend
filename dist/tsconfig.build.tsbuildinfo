@@ -2532,8 +2532,8 @@
         "affectsGlobalScope": false
       },
       "../src/sales/entities/saleitem.entity.ts": {
-        "version": "ac179b756532f6abb5865b7dd7d67f495fc7697890fda9d6f2a14c7a17bdbbaf",
-        "signature": "e70c1153390c0177585977b59634c41b56148545810cc89a6e7042fcfc76d032",
+        "version": "08c3940268a6390bf9af5fd9d0ae951637fb3078c656f5e2ba5d559c01c440d5",
+        "signature": "c3c4c142b3d6677b8b95a74e5dc1f39ab5f29d201cdc172e8177e63d6619e3fb",
         "affectsGlobalScope": false
       },
       "../src/purchases/entities/purchase.entity.ts": {
@@ -2557,8 +2557,8 @@
         "affectsGlobalScope": false
       },
       "../src/item/entities/item.entity.ts": {
-        "version": "45c842644324c8c8a35dadac12ec6deeb64fa20d220d742fd244dcc4c9b47d46",
-        "signature": "f3754e39f0e456d8f5442b59a9cdf676f9af395756af70f67fe35e155e034ef7",
+        "version": "a9cecef9c0b516b847d4fa9085b7be8a9b3b98cf47eb81a95ccd0d649bc4d436",
+        "signature": "45eb034210cbd714b5a970fd0d347d06aeaeabfec7a365bf351fa2447e567dac",
         "affectsGlobalScope": false
       },
       "../src/supplier/entities/supplier.entity.ts": {
@@ -2642,7 +2642,7 @@
         "affectsGlobalScope": false
       },
       "../src/purchases/purchases.service.ts": {
-        "version": "227661ea53f9cbdd5d69c06cd82f90c17faf63ad364b26efa43a60cdbc92e062",
+        "version": "d162789189c46756bc5ce8201a45243c6059f1c0f4695125fa280323755cef05",
         "signature": "dd3645d588b0fcb8deefb2b1198db172a7172ca622cbfe22770806a02d820000",
         "affectsGlobalScope": false
       },
@@ -2682,23 +2682,23 @@
         "affectsGlobalScope": false
       },
       "../src/item/dto/create-item.dto.ts": {
-        "version": "1468154a6272a47605fa4fd699611c5d8aea1c5f55f39dfe57d39b82c9099831",
-        "signature": "cc644de2307b042b5ef2cc340040ee11f14ccf2b0f49a0ea25976ae850015cf7",
+        "version": "97b2a2f9f6d8ef38a50e532beb57eda7157273876e6a15eb9b95c7a5cd3cd38a",
+        "signature": "67ee6929fbf7fb556f5d8c38ba28eed24670b945c798df7fe34e0605b75a9623",
         "affectsGlobalScope": false
       },
       "../src/item/dto/update-item.dto.ts": {
-        "version": "d752ec10aab439c03767e97daf78593a60dbab7d50fee4d26ecbb8ac161bb8e2",
-        "signature": "d70df9e226b5c430407853ffad1749bdfecdc913a1474a0f01967bbc541fde18",
+        "version": "cb75f0516559923dbf5f68a79f2473b2008e0baac2ae3d7775184592d0151481",
+        "signature": "32481d70fe1a60981a0892d9107ed98bc2d10a9d287fef0ad165c22749802380",
         "affectsGlobalScope": false
       },
       "../src/item/item.service.ts": {
-        "version": "5e620c22b3d7ca135053d6ee08ecb9f2d7e68fa53bb5d10306f3ead66e85fab5",
-        "signature": "98b8b7ceb2d338cf068e733d368e5ccc009c85882a39f23daf54a905dffbab0e",
+        "version": "d0caac827ab85129efa85d62e2944f08b707ae1b96458ffe451ab246cbaaa508",
+        "signature": "750634420617df07c53179b976143f0aa4d14e582b33f7e8e6f914535f7696a0",
         "affectsGlobalScope": false
       },
       "../src/item/item.controller.ts": {
         "version": "75e0be27cad47d7539eefc8dede0b21cae1b124226341c7cfdbbcad8696f833e",
-        "signature": "621cec9bc28c194c268cc1afd725c8a38f5091cfe94ae1085627798771a7c156",
+        "signature": "5b29fc9addf05848947b3eaef89f3179852998462eea48155c1e79a64f981b56",
         "affectsGlobalScope": false
       },
       "../src/item/item.module.ts": {
@@ -2742,7 +2742,7 @@
         "affectsGlobalScope": false
       },
       "../src/sales/sales.service.ts": {
-        "version": "95d83efc72ea51bd446e4357b02642e5bdf84e6ee29cb996abb054e41941c939",
+        "version": "b7c92b5550c3c1636f73696407902cdb09a0e6285cc8b5bf23321435ddc0af35",
         "signature": "6d6408563c3c6114284d960288343ff57cd771e51bbb01638231937daa2a72de",
         "affectsGlobalScope": false
       },
@@ -8713,10 +8713,6 @@
       "../src/customer/entities/customer.entity.ts": [
         "../src/sales/entities/sale.entity.ts"
       ],
-      "../src/item/dto/update-item.dto.ts": [
-        "../node_modules/@nestjs/mapped-types/index.d.ts",
-        "../src/item/dto/create-item.dto.ts"
-      ],
       "../src/item/entities/item.entity.ts": [
         "../src/category/entities/category.entity.ts",
         "../src/purchases/entities/purchase-item.entity.ts",
@@ -8725,6 +8721,7 @@
         "../src/supplier/entities/supplier.entity.ts"
       ],
       "../src/item/item.controller.ts": [
+        "../node_modules/typeorm/index.d.ts",
         "../src/item/dto/create-item.dto.ts",
         "../src/item/dto/update-item.dto.ts",
         "../src/item/entities/item.entity.ts",

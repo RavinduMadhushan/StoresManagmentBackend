@@ -35,10 +35,11 @@ let PurchasesService = class PurchasesService {
             purchaseItem.quantity = createPurchaseDto.quantity;
             let itemcategory = await queryRunner.manager.findOne(item_entity_1.Item, createPurchaseDto.itemId);
             purchaseItem.item = itemcategory;
-            let stock = await queryRunner.manager.findOne(stock_entity_1.Stock, { itemId: createPurchaseDto.itemId });
+            let stock = await queryRunner.manager.findOne(stock_entity_1.Stock, {
+                itemId: createPurchaseDto.itemId,
+            });
             console.log();
             stock.quantity = +stock.quantity + +createPurchaseDto.quantity;
-            await queryRunner.manager.save(stock);
             let r = await queryRunner.manager.save(purchaseItem);
             await queryRunner.commitTransaction();
             return purchaseItem;

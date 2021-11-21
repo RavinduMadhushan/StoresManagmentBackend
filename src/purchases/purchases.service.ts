@@ -25,22 +25,21 @@ export class PurchasesService {
     await queryRunner.startTransaction();
 
     try {
- 
-
-     
       const purchaseItem: Purchase = new Purchase();
-      purchaseItem.Date=new Date();
-      purchaseItem.quantity=createPurchaseDto.quantity;
-      let itemcategory: Item = await queryRunner.manager.findOne(Item, createPurchaseDto.itemId);
-      purchaseItem.item=itemcategory;
+      purchaseItem.Date = new Date();
+      purchaseItem.quantity = createPurchaseDto.quantity;
+      let itemcategory: Item = await queryRunner.manager.findOne(
+        Item,
+        createPurchaseDto.itemId,
+      );
+      purchaseItem.item = itemcategory;
 
-      let stock: Stock = await queryRunner.manager.findOne(Stock, { itemId : createPurchaseDto.itemId });
-    
-      console.log()
-      stock.quantity =+stock.quantity + +createPurchaseDto.quantity;
-      
-      await queryRunner.manager.save(stock);
-   
+      let stock: Stock = await queryRunner.manager.findOne(Stock, {
+        itemId: createPurchaseDto.itemId,
+      });
+
+      console.log();
+      stock.quantity = +stock.quantity + +createPurchaseDto.quantity;
 
       // const purchase: Purchase = new Purchase();
       let r = await queryRunner.manager.save(purchaseItem);

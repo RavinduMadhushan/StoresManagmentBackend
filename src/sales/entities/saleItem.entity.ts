@@ -18,9 +18,6 @@ export class SaleItem {
   price: number;
 
   @Column()
-  weight: string;
-
-  @Column()
   quantity: number;
 
   @ManyToOne(() => Item, (item) => item.saleItems)

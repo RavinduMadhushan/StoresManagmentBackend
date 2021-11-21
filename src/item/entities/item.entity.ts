@@ -1,6 +1,14 @@
 import { SaleItem } from './../../sales/entities/saleItem.entity';
 import { PurchaseItem } from 'src/purchases/entities/purchase-item.entity';
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Stock } from 'src/stock/entities/stock.entity';
 import { Category } from 'src/category/entities/category.entity';
 import { Supplier } from 'src/supplier/entities/supplier.entity';
@@ -27,7 +35,7 @@ export class Item {
 
   @Column()
   predictedPrice: number;
-  
+
   @OneToMany(() => PurchaseItem, (purchaseItem) => purchaseItem.item)
   purchaseItems: PurchaseItem[];
 
@@ -37,9 +45,15 @@ export class Item {
   @OneToMany(() => Stock, (stock) => stock.item)
   stocks: Stock[];
 
-  @ManyToOne(() => Supplier, supplier => supplier.suppliers,{eager:true})
+  @ManyToOne(() => Supplier, (supplier) => supplier.suppliers, { eager: true })
   supplier: Supplier;
 
-  @ManyToOne(() => Category, category => category.items,{eager:true})
+  @ManyToOne(() => Category, (category) => category.items, { eager: true })
   category: Category;
+
+  @Column()
+  categoryId: number;
+
+  @Column()
+  supplierId: number;
 }

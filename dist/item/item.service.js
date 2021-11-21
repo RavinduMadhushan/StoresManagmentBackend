@@ -37,8 +37,8 @@ let ItemService = class ItemService {
             item.predictedPrice = createItemDto.predictedPrice;
             item.unitCode = createItemDto.unitCode;
             item.unitCost = createItemDto.unitCost;
-            let category = await queryRunner.manager.findOne(category_entity_1.Category, createItemDto.category);
-            let supplier = await queryRunner.manager.findOne(supplier_entity_1.Supplier, createItemDto.supplier);
+            let category = await queryRunner.manager.findOne(category_entity_1.Category, createItemDto.categoryId);
+            let supplier = await queryRunner.manager.findOne(supplier_entity_1.Supplier, createItemDto.supplierId);
             item.supplier = supplier;
             console.log(category);
             item.category = category;
@@ -63,11 +63,11 @@ let ItemService = class ItemService {
     async findAll() {
         return await this.itemRepository.find();
     }
-    findOne(id) {
-        return `This action returns a #${id} itemdetail`;
+    async findOne(id) {
+        return await this.itemRepository.findOne(id);
     }
-    update(id, updateSparepartDto) {
-        return `This action updates a #${id} itemdetail`;
+    async update(id, updateSparepartDto) {
+        return await this.itemRepository.update(id, updateSparepartDto);
     }
     remove(id) {
         return `This action removes a #${id} itemdetail`;

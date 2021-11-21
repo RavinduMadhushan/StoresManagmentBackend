@@ -36,11 +36,14 @@ let SalesService = class SalesService {
             for (let index = 0; index < createSaleDto.saleItems.length; index++) {
                 const element = createSaleDto.saleItems[index];
                 const saleItem = new saleItem_entity_1.SaleItem();
-                saleItem.weight = element.weight;
+                let stock = await queryRunner.manager.findOne(stock_entity_1.Stock, {
+                    itemId: element.itemId,
+                });
                 saleItem.price = element.price;
                 saleItem.quantity = element.quantity;
                 const item = await queryRunner.manager.findOne(item_entity_1.Item, element.itemId);
-                let res = await queryRunner.manager.decrement(stock_entity_1.Stock, { itemId: element.itemId, weight: element.weight }, 'quantity', element.quantity);
+                stock.quantity = +stock.quantity - +element.quantity;
+                await queryRunner.manager.save(stock);
                 saleItem.item = item;
                 saleItem;
                 await queryRunner.manager.save(saleItem);

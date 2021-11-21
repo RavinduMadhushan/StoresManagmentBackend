@@ -29,10 +29,16 @@ export class ItemService {
       item.predictedPrice = createItemDto.predictedPrice;
       item.unitCode = createItemDto.unitCode;
       item.unitCost = createItemDto.unitCost;
-      let category: Category = await queryRunner.manager.findOne(Category, createItemDto.category);
-      let supplier: Supplier = await queryRunner.manager.findOne(Supplier, createItemDto.supplier);
+      let category: Category = await queryRunner.manager.findOne(
+        Category,
+        createItemDto.categoryId,
+      );
+      let supplier: Supplier = await queryRunner.manager.findOne(
+        Supplier,
+        createItemDto.supplierId,
+      );
 
-      item.supplier=supplier;
+      item.supplier = supplier;
       console.log(category);
       item.category = category;
 
@@ -43,12 +49,8 @@ export class ItemService {
 
       stock5.item = item;
       stock5.quantity = 0;
-      stock5.predictedQuantity=0;
+      stock5.predictedQuantity = 0;
       await queryRunner.manager.save(stock5);
-
-
-
-
 
       await queryRunner.commitTransaction();
       return item;
@@ -64,12 +66,12 @@ export class ItemService {
     return await this.itemRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} itemdetail`;
+  async findOne(id: number) {
+    return await this.itemRepository.findOne(id);
   }
 
-  update(id: number, updateSparepartDto: UpdateItemDto) {
-    return `This action updates a #${id} itemdetail`;
+  async update(id: number, updateSparepartDto: UpdateItemDto) {
+    return await this.itemRepository.update(id, updateSparepartDto);
   }
 
   remove(id: number) {

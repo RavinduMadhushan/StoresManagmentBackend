@@ -25,10 +25,6 @@ __decorate([
 ], SaleItem.prototype, "price", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
-], SaleItem.prototype, "weight", void 0);
-__decorate([
-    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], SaleItem.prototype, "quantity", void 0);
 __decorate([

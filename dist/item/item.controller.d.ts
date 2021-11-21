@@ -6,7 +6,7 @@ export declare class ItemController {
     constructor(itemService: ItemService);
     create(createItemDto: CreateItemDto): Promise<import("./entities/item.entity").Item>;
     findAll(): Promise<import("./entities/item.entity").Item[]>;
-    findOne(id: string): string;
-    update(id: string, updateItemDto: UpdateItemDto): string;
+    findOne(id: string): Promise<import("./entities/item.entity").Item>;
+    update(id: string, updateItemDto: UpdateItemDto): Promise<import("typeorm").UpdateResult>;
     remove(id: string): string;
 }

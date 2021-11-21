@@ -59,13 +59,21 @@ __decorate([
     __metadata("design:type", Array)
 ], Item.prototype, "stocks", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => supplier_entity_1.Supplier, supplier => supplier.suppliers, { eager: true }),
+    typeorm_1.ManyToOne(() => supplier_entity_1.Supplier, (supplier) => supplier.suppliers, { eager: true }),
     __metadata("design:type", supplier_entity_1.Supplier)
 ], Item.prototype, "supplier", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => category_entity_1.Category, category => category.items, { eager: true }),
+    typeorm_1.ManyToOne(() => category_entity_1.Category, (category) => category.items, { eager: true }),
     __metadata("design:type", category_entity_1.Category)
 ], Item.prototype, "category", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Number)
+], Item.prototype, "categoryId", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Number)
+], Item.prototype, "supplierId", void 0);
 Item = __decorate([
     typeorm_1.Entity()
 ], Item);

@@ -32,7 +32,10 @@ export class SalesService {
         const element = createSaleDto.saleItems[index];
         const saleItem: SaleItem = new SaleItem();
 
-        saleItem.weight = element.weight;
+        let stock: Stock = await queryRunner.manager.findOne(Stock, {
+          itemId: element.itemId,
+        });
+
         saleItem.price = element.price;
         saleItem.quantity = element.quantity;
 
@@ -42,12 +45,8 @@ export class SalesService {
         );
 
         //await queryRunner.manager.findOne(Stock,{item})
-        let res = await queryRunner.manager.decrement(
-          Stock,
-          { itemId: element.itemId, weight: element.weight },
-          'quantity',
-          element.quantity,
-        );
+        stock.quantity = +stock.quantity - +element.quantity;
+        await queryRunner.manager.save(stock);
 
         saleItem.item = item;
 

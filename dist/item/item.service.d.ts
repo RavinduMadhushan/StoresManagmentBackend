@@ -8,7 +8,7 @@ export declare class ItemService {
     constructor(itemRepository: Repository<Item>, Connection: Connection);
     create(createItemDto: CreateItemDto): Promise<Item>;
     findAll(): Promise<Item[]>;
-    findOne(id: number): string;
-    update(id: number, updateSparepartDto: UpdateItemDto): string;
+    findOne(id: number): Promise<Item>;
+    update(id: number, updateSparepartDto: UpdateItemDto): Promise<import("typeorm").UpdateResult>;
     remove(id: number): string;
 }

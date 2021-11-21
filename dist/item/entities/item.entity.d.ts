@@ -16,4 +16,6 @@ export declare class Item {
     stocks: Stock[];
     supplier: Supplier;
     category: Category;
+    categoryId: number;
+    supplierId: number;
 }

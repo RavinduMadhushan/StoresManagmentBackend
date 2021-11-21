@@ -3,8 +3,8 @@ export declare class CreateItemDto {
     id: number;
     unitCode: string;
     productDescription: string;
-    category: number;
-    supplier: number;
+    categoryId: number;
+    supplierId: number;
     minOrder: number;
     unitCost: number;
     marketPrice: number;
