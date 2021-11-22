@@ -7,7 +7,7 @@ export declare class CustomerService {
     constructor(customersRepository: Repository<Customer>);
     create(createCustomerDto: CreateCustomerDto): Promise<CreateCustomerDto & Customer>;
     findAll(): Promise<Customer[]>;
-    findOne(id: number): string;
+    findOne(id: number): Promise<Customer>;
     update(id: number, updateCustomerDto: UpdateCustomerDto): string;
     remove(id: number): string;
 }

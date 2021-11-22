@@ -20,8 +20,8 @@ export class CustomerService {
     return await this.customersRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} customer`;
+  async findOne(id: number) {
+    return await this.customersRepository.findOne(id);
   }
 
   update(id: number, updateCustomerDto: UpdateCustomerDto) {

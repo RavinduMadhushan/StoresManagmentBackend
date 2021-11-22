@@ -27,8 +27,8 @@ let CustomerService = class CustomerService {
     async findAll() {
         return await this.customersRepository.find();
     }
-    findOne(id) {
-        return `This action returns a #${id} customer`;
+    async findOne(id) {
+        return await this.customersRepository.findOne(id);
     }
     update(id, updateCustomerDto) {
         return `This action updates a #${id} customer`;
